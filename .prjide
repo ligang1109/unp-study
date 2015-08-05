@@ -1,6 +1,12 @@
-unp-study=$PWD {
+unp-study=$PWD in=tool/in.vim {
  src=src {
   my=my {
+   intro=intro {
+    daytimetcpcli.c
+   }
+   lib=lib {
+    unp.h
+   }
   }
   unp=unp {
    DISCLAIMER
@@ -877,5 +883,10 @@ unp-study=$PWD {
     unixstrserv02.c
    }
   }
+ }
+ tool=tool {
+  in.vim
+  srcindex_cscope.sh
+  srcindex_ctags.sh
  }
 }
