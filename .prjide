@@ -887,6 +887,8 @@ unp-study=$PWD in=tool/in.vim {
  test=test {
   client.c
   server.c
+  server-master.c
+  server-worker.c
  }
  tool=tool {
   in.vim

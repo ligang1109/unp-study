@@ -36,7 +36,7 @@ int main(int argc, char **argv)
         connfd = accept(listenfd, (struct sockaddr *) NULL, NULL);
 
         ticks = time(NULL);
-        snprintf(buff, sizeof(buff), "%.24s\n", ctime(&ticks));
+        snprintf(buff, sizeof(buff), "worker %.24s\n", ctime(&ticks));
         write(connfd, buff, strlen(buff));
 
         close(connfd);
