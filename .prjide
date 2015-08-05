@@ -884,6 +884,10 @@ unp-study=$PWD in=tool/in.vim {
    }
   }
  }
+ test=test {
+  client.c
+  server.c
+ }
  tool=tool {
   in.vim
   srcindex_cscope.sh
