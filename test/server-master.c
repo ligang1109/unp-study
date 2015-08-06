@@ -1,7 +1,7 @@
 #include <sys/types.h>
 #include <sys/socket.h>
-#include <stdlib.h>
 #include <stdio.h>
+#include <stdlib.h>
 #include <netinet/in.h>
 #include <strings.h>
 #include <string.h>
@@ -14,7 +14,7 @@ int main(int argc, char **argv)
 {
     int listenfd, connfd, pid, r;
     struct sockaddr_in servaddr;
-    char buff[MAXLINE + 1];
+    char buff[MAXLINE + 1], str[MAXLINE];
     time_t ticks;
 
     if (argc != 2) {
@@ -32,11 +32,13 @@ int main(int argc, char **argv)
     bind(listenfd, (struct sockaddr *) &servaddr, sizeof(servaddr));
 
     listen(listenfd, 1024);
+    printf("master listenfd: %d\n", listenfd);
 
     pid = fork();
 
     if (pid == 0) {
-        r = execl("/home/ligang/devspace/unp-study/test/worker", "worker", argv[1], (char *) 0);
+        sprintf(str, "%d", listenfd);
+        r = execl("/home/ligang/devspace/unp-study/test/worker", "worker", argv[1], str, (char *) 0);
         if (r < 0) {
             printf("%d\n", r);
         }

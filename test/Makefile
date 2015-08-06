@@ -1,0 +1,13 @@
+all: client server master worker
+
+client: client.c
+	gcc -o client client.c
+
+server: server.c
+	gcc -o server server.c
+
+master: server-master.c
+	gcc -o master server-master.c
+
+worker: server-worker.c
+	gcc -o worker server-worker.c
