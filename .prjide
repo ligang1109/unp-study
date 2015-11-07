@@ -889,6 +889,7 @@ unp-study=$PWD in=tool/in.vim {
   server.c
   server-master.c
   server-worker.c
+  signal.c
   Makefile
  }
  tool=tool {

@@ -1,4 +1,4 @@
-all: client server master worker
+all: client server master worker signal
 
 client: client.c
 	gcc -o client client.c
@@ -11,3 +11,6 @@ master: server-master.c
 
 worker: server-worker.c
 	gcc -o worker server-worker.c
+
+signal: signal.c
+	gcc -o signal signal.c
