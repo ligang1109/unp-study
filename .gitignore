@@ -2,3 +2,9 @@
 tmp
 
 tags
+
+test/client
+test/master
+test/server
+test/signal
+test/worker
